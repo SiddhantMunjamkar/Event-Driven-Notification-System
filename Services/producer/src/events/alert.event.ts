@@ -18,7 +18,7 @@ export const alertEvent = async (
   };
 
   await producer.send({
-    topic: "notification",
+    topic: "notifications",
     messages: [{ value: JSON.stringify(event) }],
   });
 };
