@@ -12,9 +12,13 @@
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
-    "kafkajs": "^2.2.4"
+    "@prisma/client": "6.19.1",
+    "dotenv": "^17.2.3",
+    "kafkajs": "^2.2.4",
+    "redis": "^5.10.0"
   },
   "devDependencies": {
-    "@types/kafkajs": "^1.8.2"
+    "@types/kafkajs": "^1.8.2",
+    "prisma": "6.19.1"
   }
 }

@@ -37,3 +37,11 @@ export async function markASFailed(params: { id: string; error: string }) {
     },
   });
 }
+
+export async function getRetry(params: { id: string }) {
+  const record = await prismaClient.notification.findUnique({
+    where: { id: params.id },
+    select: { retryCount: true },
+  });
+  return record?.retryCount ?? 0;
+}
