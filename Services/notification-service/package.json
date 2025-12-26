@@ -15,10 +15,12 @@
     "@prisma/client": "6.19.1",
     "dotenv": "^17.2.3",
     "kafkajs": "^2.2.4",
+    "nodemailer": "^7.0.12",
     "redis": "^5.10.0"
   },
   "devDependencies": {
     "@types/kafkajs": "^1.8.2",
+    "@types/nodemailer": "^7.0.4",
     "prisma": "6.19.1"
   }
 }

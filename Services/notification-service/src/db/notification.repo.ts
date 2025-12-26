@@ -7,12 +7,22 @@ export async function CreateNotification(params: {
   recipient: string;
   message: string;
 }) {
-  return prismaClient.notification.create({
-    data: {
+  return prismaClient.notification.upsert({
+    where: {
+      eventId_channel: {
+        eventId: params.eventId,
+        channel: params.channel,
+      },
+    },
+    create: {
       eventId: params.eventId,
       channel: params.channel,
       recipient: params.recipient,
       message: params.message,
+      status: NotificationStatus.PENDING,
+    },
+    update: {
+      // If already exists, just return existing record (idempotency)
       status: NotificationStatus.PENDING,
     },
   });
