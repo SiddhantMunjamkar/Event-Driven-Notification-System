@@ -1,6 +1,7 @@
 
 
-const MAX_RETRIES = 3;
+const MAX_RETRIES = 2;
+
 
 
 export function retryHandler(retryCount: number): boolean {
